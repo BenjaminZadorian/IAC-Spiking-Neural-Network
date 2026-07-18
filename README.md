@@ -8,9 +8,8 @@ Using the PyNN & NEST libraries for Python, I built a spiking neural network arc
 
 ## Results
 
-- Did the model reproduce the Word Superiority Effect? To what extent?
-- How did System 1 (shared wickelfeature assembly) and System 2 (per-letter assembly) compare?
-- Any surprising or notable findings from the occlusion vs. sequential presentation experiments?
+- The model did reproduce the Word Superiority Effect.  It successfully used contextual-feedback to predict the rest of the word based on both a chosen target letter, and occluded features of a word.
+- System 2 performed better and had a higher level of clarity within its results as the replacement of a single shared wickelfeature assembly with independant assemblies for each letter removed the letter-bleed effect that was created with the former system architecture.
 
 **Example output:**
 
