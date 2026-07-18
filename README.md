@@ -1,15 +1,31 @@
 # Word Superiority Effect Experiments Implemented using a Spiking Neural Network
-A SNN network used to experiment with Word Superiority Effect research.
+
+A spiking neural network (SNN) built to test whether a biologically-inspired model can reproduce the **Word Superiority Effect** — the finding that people recognise letters faster and more accurately when they appear within a word than in isolation. Built as a Final Year Undergraduate project.
+
 > *These two systems are different architectures of an SNN network that conduct an occlusion experiment & a sequential letter presentation experiment relating to the WSE.*
 
-This project was created as a Final Year Undergraduate project.  Using the PyNN & NEST libraries for Python, I worked on created a spiking neural network architecture that can replicate the conditions in the Rumelhart and McClelland Occlusion Experiment relating to WSE.
+Using the PyNN & NEST libraries for Python, I built a spiking neural network architecture to replicate the conditions of the Rumelhart and McClelland Occlusion Experiment relating to WSE.
+
+## Results
+
+- Did the model reproduce the Word Superiority Effect? To what extent?
+- How did System 1 (shared wickelfeature assembly) and System 2 (per-letter assembly) compare?
+- Any surprising or notable findings from the occlusion vs. sequential presentation experiments?
+
+**Example output:**
+
+![occlusion experiment results histogram](ContextK-ResultPicture.PNG)
+![occlusion experiment results bar chart](ContextK-ResultPicture2.PNG)
 
 ## Overview
 Main Features:
 - Two Systems (System 1 with a shared wickelfeature assembly for all letter assemblies, System 2 with each letter assembly having a personal wickelfeature assembly)
-- Able to conduct 2 experiment: Letter Occlusion (features within the letter are obscured), and Sequential Letter Presentation (showing the letters in a word at sequential time steps)
+- Able to conduct 2 experiments: Letter Occlusion (features within the letter are obscured), and Sequential Letter Presentation (showing the letters in a word at sequential time steps)
 - Plots the spike data and firing rates to histograms and bar charts respectively
 - Exports the spike data to .pkl files, which can be read with files in the **Utils** directory
+
+## Tech Stack
+Python · NEST Simulator · PyNN · NumPy · Matplotlib
 
 ## Requirements
 - Python 3.8 or later
@@ -22,7 +38,7 @@ sudo apt install python3-pip
 ```
 2. Create a virtual environment - example directory name 'iac_model_env' (optional)
 ```py
-apt install python3.[X]-venv
+apt install python3.8-venv
 python3 -m venv iac_model_env
 source iac_model_env/bin/activate
 ```
@@ -36,13 +52,13 @@ sudo apt-get install nest
 ```py
 pip install pyNN
 ```
-5. Install Other Dependancies
+5. Install Other Dependencies
 ```py
 pip install numpy matplotlib
 ```
 
 ## Usage Instructions
-- Use RUN_OCCLUSION_TEST & RUN_SEQUENTIAL_TEST to control what tests are ran
+- Use RUN_OCCLUSION_TEST & RUN_SEQUENTIAL_TEST to control what tests are run
 ```py
 RUN_OCCLUSION_TEST = False
 RUN_SEQUENTIAL_TEST = True
@@ -54,10 +70,14 @@ RUN_SEQUENTIAL_TEST = True
         ("Isolated_D", [1, 4], False),
     ]
 ```
-- Alternatively, uncomment one of the preset experiments within the 'occusion_test' or 'sequential_test' arrays
-  
-## ToDo:
-1. Add either CLI or GUI interface to make usage smoother
-2. Remove Tsodyks-Markram synapses and try out adaptive neurons to fix runaway excitation
-3. Add more varying features/letters/word
+- Alternatively, uncomment one of the preset experiments within the 'occlusion_test' or 'sequential_test' arrays
+
+## What I'd Explore Next
+1. Add either a CLI or GUI interface to make usage smoother
+2. Remove Tsodyks-Markram synapses and try adaptive neurons to fix runaway excitation
+3. Add more varying features/letters/words
 4. Recreate other WSE experiments
+
+## Background
+
+Built as a Final Year Undergraduate project at Middlesex University, combining computational neuroscience (the Interactive Activation and Competition model) with spiking neural network implementation.
